@@ -1,0 +1,14 @@
+@import './_variables.scss'; 
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: gray;
+  justify-content: space-between;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  font-family: $fontprimary;
+}
