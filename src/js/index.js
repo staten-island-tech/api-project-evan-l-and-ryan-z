@@ -1,6 +1,6 @@
-const key =
+let key =
   "https://api.worldofwarships.com/wows/account/list/?application_id=fde297950d8345d873843e777c3650f4&search=StabbyShpee";
-const key2 =
+let key2 =
   "https://api.worldofwarships.com/wows/account/info/?application_id=fde297950d8345d873843e777c3650f4&account_id=1033734436";
 const playerName = document.getElementById("playerName");
 const playerID = document.getElementById("playerID");
@@ -16,13 +16,26 @@ const draws = document.getElementById("draws");
 console.log(key);
 console.log(key2);
 
-const apiInformation = async function () {
+function fetchData(e) {
+  e.preventDefault();
+  userInputBox.textContent;
+  console.log(userInputBox.value);
+  let key = `https://api.worldofwarships.com/wows/account/list/?application_id=fde297950d8345d873843e777c3650f4&search=${userInputBox.value}`;
+  console.log(key);
+  apiInformation(key);
+}
+
+submitBtn.addEventListener("click", fetchData);
+
+const apiInformation = async function (key) {
   try {
     const response = await fetch(key);
     const data = await response.json();
     console.log(data.data[0]);
     const specifiedID = data.data[0]["account_id"];
     console.log(specifiedID);
+    let key2 = `https://api.worldofwarships.com/wows/account/info/?application_id=fde297950d8345d873843e777c3650f4&account_id=${specifiedID}`;
+    console.log(key2);
     const response2 = await fetch(key2);
     const data2 = await response2.json();
     console.log(specifiedID);
@@ -41,7 +54,6 @@ const apiInformation = async function () {
     displayInfo();
   } catch (error) {
     console.log(error);
+    userInputBox.value = "This User Does Not Exist";
   }
 };
-
-apiInformation();

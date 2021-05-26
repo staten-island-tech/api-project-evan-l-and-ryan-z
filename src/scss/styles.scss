@@ -1,14 +1,27 @@
-@import './_variables.scss'; 
+@import "./_variables.scss";
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 1rem;
   box-sizing: border-box;
   background-color: gray;
+  background-image: url(media/bg.jpg);
+  background-size: cover;
   justify-content: space-between;
   text-align: center;
+  font-weight: 900;
+  font-family: $fontprimary;
+}
+
+.header {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.playerinformation {
+  font-size: 1.5rem;
+  color: white;
+  margin: 2rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
-  font-family: $fontprimary;
 }
