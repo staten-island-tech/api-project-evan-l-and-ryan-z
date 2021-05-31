@@ -57,3 +57,9 @@ const apiInformation = async function (key) {
     userInputBox.value = "This User Does Not Exist";
   }
 };
+
+if (!userInputBox.textContent) {
+  let key =
+    "https://api.worldofwarships.com/wows/account/list/?application_id=fde297950d8345d873843e777c3650f4&search=StabbyShpee";
+  apiInformation(key);
+}
